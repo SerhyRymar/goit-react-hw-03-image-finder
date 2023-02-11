@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import css from './Searchbar.module.css';
 
 export class Searchbar extends Component {
 
@@ -10,14 +11,16 @@ export class Searchbar extends Component {
     render() {
       
     return (
-      <header class="searchbar">
-        <form class="form">
-          <button type="submit" class="button">
-            <span class="button-label">Search</span>
+      <header className={css.searchbar}>
+        <form className={css.search_form}>
+          <button type="submit" className={css.search_form_button}>
+            <span className={css.search_form_label}>
+              Search
+            </span>
           </button>
 
           <input
-            class="input"
+            className={css.search_form_input}
             type="text"
             autocomplete="off"
             autofocus

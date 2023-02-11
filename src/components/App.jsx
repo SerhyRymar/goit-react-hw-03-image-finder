@@ -5,7 +5,19 @@ import * as API from './Api'
 
 export class App extends Component {
   state = {
-    query: [],
+    page: 1,
+    query: '',
+    item: [],
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.setState({
+      page: 1,
+      query: e.target.elements.query.value,
+      items: [],
+    });
+    e.target.reset();
   };
 
   async getPictures(query, page) {
@@ -20,7 +32,7 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <Searchbar
+        <Searchbar onSubmit={this.handleSubmit}
         />
       </div>
     );
